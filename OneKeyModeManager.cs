@@ -72,7 +72,7 @@ namespace OneKeyModeManager
 
         public MainForm()
         {
-            Text = "模式切换器";
+            Text = "工作游戏模式一键切换";
             StartPosition = FormStartPosition.CenterScreen;
             MinimumSize = new Size(980, 620);
             Size = new Size(1120, 680);
@@ -99,7 +99,7 @@ namespace OneKeyModeManager
 
             var title = new Label
             {
-                Text = "模式切换器",
+                Text = "工作游戏模式一键切换",
                 Dock = DockStyle.Fill,
                 TextAlign = ContentAlignment.MiddleLeft,
                 Font = new Font("Microsoft YaHei UI", 16F, FontStyle.Bold),
@@ -750,7 +750,7 @@ namespace OneKeyModeManager
             {
                 dialog.Title = "导出配置";
                 dialog.Filter = "配置文件 (*.xml)|*.xml";
-                dialog.FileName = "模式切换器配置.xml";
+                dialog.FileName = "工作游戏模式一键切换配置.xml";
                 if (dialog.ShowDialog(this) != DialogResult.OK) return;
                 File.Copy(configPath, dialog.FileName, true);
                 MessageBox.Show(this, "配置已导出。", "完成", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -1225,4 +1225,5 @@ namespace OneKeyModeManager
         }
     }
 }
+
 

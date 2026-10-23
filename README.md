@@ -1,8 +1,12 @@
-# 模式切换器 · WorkGameModeSwitcher
+# 工作游戏模式一键切换
 
-一个轻量的 Windows 桌面工具，用一套可编辑的软件启动、关闭规则，快速切换工作、游戏、修图、剪辑等使用场景。使用 C# 和 Windows Forms 开发，提供中文界面。
+**工作游戏模式一键切换**（WorkGameModeSwitcher）是一个轻量的 Windows 桌面工具，用一套可编辑的软件启动、关闭规则，快速切换工作、游戏、修图、剪辑等使用场景。使用 C# 和 Windows Forms 开发，提供中文界面。
 
 > 此处的“模式”是软件运行组合，不会调整 Windows 游戏模式、显卡设置或电源计划，也不承诺提升游戏帧率。
+
+## 软件截图
+
+![工作游戏模式一键切换软件主界面](screenshot.png)
 
 ## 主要功能
 
@@ -60,3 +64,4 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\build.ps1
 ## 许可证
 
 采用 [MIT License](LICENSE)。允许使用、修改和分发，包括商业使用；分发时需保留版权及许可声明。软件按现状提供。
+

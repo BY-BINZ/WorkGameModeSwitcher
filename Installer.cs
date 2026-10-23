@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
@@ -26,7 +26,7 @@ namespace WorkGameModeSwitcherSetup
 
         public SetupForm()
         {
-            Text = "模式切换器 安装程序";
+            Text = "工作游戏模式一键切换 安装程序";
             StartPosition = FormStartPosition.CenterScreen;
             FormBorderStyle = FormBorderStyle.FixedDialog;
             MaximizeBox = false;
@@ -46,7 +46,7 @@ namespace WorkGameModeSwitcherSetup
             main.RowStyles.Add(new RowStyle(SizeType.Absolute, 42));
             Controls.Add(main);
 
-            var title = new Label { Text = "安装模式切换器", Dock = DockStyle.Fill, Font = new Font("Microsoft YaHei UI", 14F, FontStyle.Bold), TextAlign = ContentAlignment.MiddleLeft };
+            var title = new Label { Text = "安装工作游戏模式一键切换", Dock = DockStyle.Fill, Font = new Font("Microsoft YaHei UI", 14F, FontStyle.Bold), TextAlign = ContentAlignment.MiddleLeft };
             main.Controls.Add(title, 0, 0);
             main.SetColumnSpan(title, 3);
 
@@ -111,20 +111,20 @@ namespace WorkGameModeSwitcherSetup
                 var targetConfig = Path.Combine(targetDir, "modes.config.xml");
                 if (File.Exists(sourceConfig) && !File.Exists(targetConfig)) File.Copy(sourceConfig, targetConfig);
 
-                var uninstall = Path.Combine(targetDir, "卸载模式切换器.bat");
+                var uninstall = Path.Combine(targetDir, "卸载工作游戏模式一键切换.bat");
                 File.WriteAllText(uninstall, "@echo off\r\ncd /d \"%LOCALAPPDATA%\\Programs\"\r\nrmdir /s /q \"WorkGameModeSwitcher\"\r\n", System.Text.Encoding.Default);
 
                 if (desktopBox.Checked)
                 {
                     var desktop = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
-                    CreateUrlShortcut(Path.Combine(desktop, "模式切换器.url"), targetExe);
+                    CreateUrlShortcut(Path.Combine(desktop, "工作游戏模式一键切换.url"), targetExe);
                 }
                 if (startMenuBox.Checked)
                 {
-                    var startMenu = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.StartMenu), "Programs", "模式切换器");
+                    var startMenu = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.StartMenu), "Programs", "工作游戏模式一键切换");
                     Directory.CreateDirectory(startMenu);
-                    CreateUrlShortcut(Path.Combine(startMenu, "模式切换器.url"), targetExe);
-                    CreateUrlShortcut(Path.Combine(startMenu, "卸载模式切换器.url"), uninstall);
+                    CreateUrlShortcut(Path.Combine(startMenu, "工作游戏模式一键切换.url"), targetExe);
+                    CreateUrlShortcut(Path.Combine(startMenu, "卸载工作游戏模式一键切换.url"), uninstall);
                 }
 
                 statusLabel.Text = "安装完成。";
@@ -148,3 +148,4 @@ namespace WorkGameModeSwitcherSetup
         }
     }
 }
+
