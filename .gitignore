@@ -1,0 +1,8 @@
+# Local application settings may contain personal program paths.
+*.config.xml
+*.user
+*.suo
+.vs/
+bin/
+obj/
+*.pdb
